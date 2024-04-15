@@ -39,5 +39,5 @@ More features will be introduced soon
 
 ## Examples
 <p align="center">
-    <img src="???" />
+    <img src="[preview](https://github.com/p4re/hugbug/raw/main/README/hugbug%20(1).mp4)" />
 </p>
