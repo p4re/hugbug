@@ -2,6 +2,8 @@ local Player = game:GetService("Players").LocalPlayer
 local Mouse = Player:GetMouse()
 local Camera = game:GetService("Workspace").CurrentCamera
 
+limbs = {}
+
 local function DrawLine()
     local l = Drawing.new("Line")
     l.Visible = false
@@ -10,10 +12,9 @@ local function DrawLine()
     l.Color = Color3.fromRGB(255, 255, 255)
     l.Thickness = 1
     l.Transparency = 1
+    table.insert(limbs,l)
     return l
 end
-
-local limbs = {}
 
 local function DrawESP(plr)
     repeat wait() until plr.Character ~= nil and plr.Character:FindFirstChild("Humanoid") ~= nil
