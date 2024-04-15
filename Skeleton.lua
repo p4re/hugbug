@@ -2,7 +2,7 @@ local Player = game:GetService("Players").LocalPlayer
 local Mouse = Player:GetMouse()
 local Camera = game:GetService("Workspace").CurrentCamera
 
-limbs = {}
+_G.limbs = {}
 
 local function DrawLine()
     local l = Drawing.new("Line")
@@ -12,7 +12,7 @@ local function DrawLine()
     l.Color = Color3.fromRGB(255, 255, 255)
     l.Thickness = 1
     l.Transparency = 1
-    table.insert(limbs,l)
+    table.insert(_G.limbs,l)
     return l
 end
 
