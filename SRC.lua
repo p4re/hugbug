@@ -460,24 +460,34 @@ local CanCollide = false
 local CanCollideTable = {}
 local function NoClip()
 	CanCollide = not CanCollide
-	if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+	if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
 		if CanCollide == true then
 			CanCollideTable = {}
 			for i,v in next, LocalPlayer.Character:GetChildren() do
 				if v:IsA("BasePart") then
 					if v.CanCollide == true then
 						table.insert(CanCollideTable,v)
-						CanCollideTable.CanCollide = false
 					end
 				end
 			end
 		else
-			for i,v in next, CanCollideTable:GetChildren() do
+			for i,v in next, CanCollideTable do
 				CanCollideTable.CanCollide = true
 			end
+			CanCollideTable = {}
 		end
 	end
 end
+
+RunService.RenderStepped:Connect(function()
+	if CanCollide == true then
+		if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+			for i,v in next, CanCollideTable do
+				CanCollideTable.CanCollide = false
+			end
+		end
+	end
+end)
 
 Combat:NewSlider("Triggerbot Click Delay", aC8bug["TriggerbotClickDelay"]["Value"], 0.025, 0, 1.5, 3, "s", function(value)
     aC8bug["TriggerbotClickDelay"]["Value"] = value
@@ -515,7 +525,7 @@ Combat:NewKeybind("Noclip > ", aC8bug["Noclip"]["Key"], function(Key)
 
     if Key == nil then
         aC8bug["Noclip"]["Enabled"] = not aC8bug["Noclip"]["Enabled"]
-	Noclip()
+	NoClip()
 	print("Noclip ", aC8bug["Noclip"]["Enabled"])
     end
 end)
