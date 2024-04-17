@@ -4,9 +4,10 @@ local Skeleton = loadstring(game:HttpGet("https://raw.githubusercontent.com/p4re
 _G.mastervis = false
 
 getgenv().aC8bug = {
-	["Silent Aim"] = {["Key"] = Enum.KeyCode.Q, ["Enabled"] = false},
+    ["Silent Aim"] = {["Key"] = Enum.KeyCode.Q, ["Enabled"] = false},
     ["Triggerbot"] = {["Key"] = Enum.KeyCode.T, ["Enabled"] = false},
     ["BunnyHop"] = {["Key"] = Enum.KeyCode.J, ["Enabled"] = false},
+    ["Noclip"] = {["Key"] = Enum.KeyCode.N, ["Enabled"] = false},
     ["Spinbot"] = {["Key"] = Enum.KeyCode.B, ["Enabled"] = false},
     ["Flight"] = {["Key"] = Enum.KeyCode.V, ["Enabled"] = false},
     ["Skeleton"] = {["Key"] = Enum.KeyCode.L, ["Enabled"] = false},
@@ -455,6 +456,29 @@ Combat:NewKeybind("Triggerbot > ", aC8bug["Triggerbot"]["Key"], function(Key)
     end
 end)
 
+local CanCollide = false
+local CanCollideTable = {}
+local function NoClip()
+	CanCollide = not CanCollide
+	if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+		if CanCollide == true then
+			CanCollideTable = {}
+			for i,v in next, LocalPlayer.Character:GetChildren() do
+				if v:IsA("BasePart") then
+					if v.CanCollide == true then
+						table.insert(CanCollideTable,v)
+						CanCollideTable.CanCollide = false
+					end
+				end
+			end
+		else
+			for i,v in next, CanCollideTable:GetChildren() do
+				CanCollideTable.CanCollide = true
+			end
+		end
+	end
+end
+
 Combat:NewSlider("Triggerbot Click Delay", aC8bug["TriggerbotClickDelay"]["Value"], 0.025, 0, 1.5, 3, "s", function(value)
     aC8bug["TriggerbotClickDelay"]["Value"] = value
 end)
@@ -483,6 +507,16 @@ Combat:NewKeybind("Bunny Hop > ", aC8bug["BunnyHop"]["Key"], function(Key)
     if Key == nil then
         aC8bug["BunnyHop"]["Enabled"] = not aC8bug["BunnyHop"]["Enabled"]
 		print("BunnyHop ", aC8bug["BunnyHop"]["Enabled"])
+    end
+end)
+
+Combat:NewKeybind("Noclip > ", aC8bug["Noclip"]["Key"], function(Key)
+    aC8bug["Noclip"]["Key"] = Key
+
+    if Key == nil then
+        aC8bug["Noclip"]["Enabled"] = not aC8bug["Noclip"]["Enabled"]
+	Noclip()
+	print("Noclip ", aC8bug["Noclip"]["Enabled"])
     end
 end)
 
