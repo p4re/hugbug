@@ -483,7 +483,7 @@ RunService.RenderStepped:Connect(function()
 	if CanCollide == true then
 		if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
 			for i,v in next, CanCollideTable do
-				CanCollideTable.CanCollide = false
+				v.CanCollide = false
 			end
 		end
 	end
