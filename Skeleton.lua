@@ -1,3 +1,4 @@
+pcall(function()
 local Player = game:GetService("Players").LocalPlayer
 local Mouse = Player:GetMouse()
 local Camera = game:GetService("Workspace").CurrentCamera
@@ -275,3 +276,4 @@ game.Players.PlayerAdded:Connect(function(newplr)
 end)
 
 return limbs
+    end)
