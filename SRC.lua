@@ -471,20 +471,22 @@ local function NoClip()
 				end
 			end
 		else
-			for i,v in next, CanCollideTable do
-				CanCollideTable.CanCollide = true
-			end
+			task.wait(0.02)
 			CanCollideTable = {}
 		end
 	end
 end
 
 RunService.RenderStepped:Connect(function()
-	if CanCollide == true then
-		if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
-			for i,v in next, CanCollideTable do
-				v.CanCollide = false
-			end
+	if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+		if CanCollide == true then
+				for i,v in next, CanCollideTable do
+					v.CanCollide = false
+				end
+		else
+				for i,v in next, CanCollideTable do
+					v.CanCollide = true
+				end
 		end
 	end
 end)
