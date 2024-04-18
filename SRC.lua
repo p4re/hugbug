@@ -13,7 +13,7 @@ getgenv().aC8bug = {
     ["Skeleton"] = {["Key"] = Enum.KeyCode.L, ["Enabled"] = false},
     ["ESP"] = {["Key"] = Enum.KeyCode.P, ["Enabled"] = false},
     ["Packet"] = {["Key"] = Enum.KeyCode.Z, ["Enabled"] = false},
-    ["UI"] = {["Key"] = Enum.KeyCode.Z, ["Enabled"] = false},
+    ["UI"] = {["Key"] = Enum.KeyCode.KeypadFive, ["Enabled"] = false},
     ["ForceFieldCheck"] = {["Enabled"] = true},
     ["IsVisibleCheck"] = {["Enabled"] = true},
     ["TriggerbotClickDelay"] = {["Value"] = 0.1},
@@ -614,5 +614,15 @@ Misc:NewKeybind("Packet Freezer > ", aC8bug["Packet"]["Key"], function(Key)
         else
             game:GetService("NetworkClient"):SetOutgoingKBPSLimit(9e9)
         end
+    end
+end)
+
+Misc:NewKeybind("UI > ", aC8bug["UI"]["Key"], function(Key)
+    aC8bug["UI"]["Key"] = Key
+
+    if Key == nil then
+        aC8bug["UI"]["Enabled"] = not aC8bug["UI"]["Enabled"]
+	print("UI ", aC8bug["UI"]["Enabled"])
+        Library:Toggle()
     end
 end)
