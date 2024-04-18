@@ -13,6 +13,7 @@ getgenv().aC8bug = {
     ["Skeleton"] = {["Key"] = Enum.KeyCode.L, ["Enabled"] = false},
     ["ESP"] = {["Key"] = Enum.KeyCode.P, ["Enabled"] = false},
     ["Packet"] = {["Key"] = Enum.KeyCode.Z, ["Enabled"] = false},
+    ["UI"] = {["Key"] = Enum.KeyCode.Z, ["Enabled"] = false},
     ["ForceFieldCheck"] = {["Enabled"] = true},
     ["IsVisibleCheck"] = {["Enabled"] = true},
     ["TriggerbotClickDelay"] = {["Value"] = 0.1},
