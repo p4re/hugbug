@@ -35,6 +35,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/p4re/hugbug/main/SRC.
 * Packet Freezer
     * Pauses Packets
 
+# HugBug Game Features
+
+## Prison Life
+* Team Swapper
+    * Prisoner
+    * Criminal
+    * Police
+* Grab Guns
+* Kill Aura
+* Kill All
+
 More features will be introduced soon
 
 ## Examples
