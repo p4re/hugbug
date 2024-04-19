@@ -2,7 +2,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/p4re/
 local Skeleton = loadstring(game:HttpGet("https://raw.githubusercontent.com/p4re/hugbug/main/Skeleton.lua"))()
 
 _G.mastervis = false
-
+pcall(function()
 getgenv().aC8bug = {
     ["Silent Aim"] = {["Key"] = Enum.KeyCode.Q, ["Enabled"] = false},
     ["Triggerbot"] = {["Key"] = Enum.KeyCode.T, ["Enabled"] = false},
@@ -626,3 +626,4 @@ Misc:NewKeybind("UI > ", aC8bug["UI"]["Key"], function(Key)
         Library:Toggle()
     end
 end)
+	end)
