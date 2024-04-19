@@ -444,7 +444,7 @@ Combat:NewKeybind("Silent Aim > ", aC8bug["Silent Aim"]["Key"], function(Key)
     aC8bug["Silent Aim"]["Key"] = Key
     if Key == nil then
         aC8bug["Silent Aim"]["Enabled"] = not aC8bug["Silent Aim"]["Enabled"]
-		print("silent aim", aC8bug["Triggerbot"]["Enabled"])
+		rconsoleprint("silent aim", aC8bug["Triggerbot"]["Enabled"])
     end
 end)
 
@@ -453,7 +453,7 @@ Combat:NewKeybind("Triggerbot > ", aC8bug["Triggerbot"]["Key"], function(Key)
 
     if Key == nil then
         aC8bug["Triggerbot"]["Enabled"] = not aC8bug["Triggerbot"]["Enabled"]
-		print("trigger", aC8bug["Triggerbot"]["Enabled"])
+		rconsoleprint("trigger", aC8bug["Triggerbot"]["Enabled"])
     end
 end)
 
@@ -519,7 +519,7 @@ Combat:NewKeybind("Bunny Hop > ", aC8bug["BunnyHop"]["Key"], function(Key)
 
     if Key == nil then
         aC8bug["BunnyHop"]["Enabled"] = not aC8bug["BunnyHop"]["Enabled"]
-		print("BunnyHop ", aC8bug["BunnyHop"]["Enabled"])
+		rconsoleprint("BunnyHop ", aC8bug["BunnyHop"]["Enabled"])
     end
 end)
 
@@ -529,7 +529,7 @@ Combat:NewKeybind("Noclip > ", aC8bug["Noclip"]["Key"], function(Key)
     if Key == nil then
         aC8bug["Noclip"]["Enabled"] = not aC8bug["Noclip"]["Enabled"]
 	NoClip()
-	print("Noclip ", aC8bug["Noclip"]["Enabled"])
+	rconsoleprint("Noclip ", aC8bug["Noclip"]["Enabled"])
     end
 end)
 
@@ -538,7 +538,7 @@ Combat:NewKeybind("Spinbot > ", aC8bug["Spinbot"]["Key"], function(Key)
 
     if Key == nil then
         aC8bug["Spinbot"]["Enabled"] = not aC8bug["Spinbot"]["Enabled"]
-		print("Spinbot ", aC8bug["Spinbot"]["Enabled"])
+		rconsoleprint("Spinbot ", aC8bug["Spinbot"]["Enabled"])
     end
 end)
 
@@ -547,7 +547,7 @@ Combat:NewKeybind("Flight > ", aC8bug["Flight"]["Key"], function(Key)
 
     if Key == nil then
         aC8bug["Flight"]["Enabled"] = not aC8bug["Flight"]["Enabled"]
-		print("Flight ", aC8bug["Flight"]["Enabled"])
+		rconsoleprint("Flight ", aC8bug["Flight"]["Enabled"])
         if aC8bug["Flight"]["Enabled"] == false then
             if LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
                 local RootPart = LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
@@ -572,7 +572,7 @@ Combat:NewKeybind("Skeleton > ", aC8bug["Skeleton"]["Key"], function(Key)
 
     if Key == nil then
         aC8bug["Skeleton"]["Enabled"] = not aC8bug["Skeleton"]["Enabled"]
-		print("Skeleton ", aC8bug["Skeleton"]["Enabled"])
+		rconsoleprint("Skeleton ", aC8bug["Skeleton"]["Enabled"])
         if aC8bug["Skeleton"]["Enabled"] == true then
             for i,v in next, _G.limbs do
                 v.Transparency = 1
@@ -590,7 +590,7 @@ Combat:NewKeybind("ESP > ", aC8bug["ESP"]["Key"], function(Key)
 
     if Key == nil then
         aC8bug["ESP"]["Enabled"] = not aC8bug["ESP"]["Enabled"]
-		print("ESP ", aC8bug["ESP"]["Enabled"])
+		rconsoleprint("ESP ", aC8bug["ESP"]["Enabled"])
         if aC8bug["ESP"]["Enabled"] == true then
             _G.mastervis = true
             Visibility()
@@ -608,7 +608,7 @@ Misc:NewKeybind("Packet Freezer > ", aC8bug["Packet"]["Key"], function(Key)
 
     if Key == nil then
         aC8bug["Packet"]["Enabled"] = not aC8bug["Packet"]["Enabled"]
-		print("Packet ", aC8bug["Packet"]["Enabled"])
+		rconsoleprint("Packet ", aC8bug["Packet"]["Enabled"])
         if aC8bug["Packet"]["Enabled"] == true then
             game:GetService("NetworkClient"):SetOutgoingKBPSLimit(1)
         else
@@ -622,7 +622,7 @@ Misc:NewKeybind("UI > ", aC8bug["UI"]["Key"], function(Key)
 
     if Key == nil then
         aC8bug["UI"]["Enabled"] = not aC8bug["UI"]["Enabled"]
-	print("UI ", aC8bug["UI"]["Enabled"])
+	rconsoleprint("UI ", aC8bug["UI"]["Enabled"])
         Library:Toggle()
     end
 end)
