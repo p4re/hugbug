@@ -1,3 +1,5 @@
+adding deadzone stuff soon, some moderator had a huge ass ego and it pissed me off
+
 # Loadstring
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/p4re/hugbug/main/SRC.lua"))()
